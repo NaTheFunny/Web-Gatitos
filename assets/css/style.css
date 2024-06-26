@@ -1,3 +1,5 @@
+
+
 *{
     margin: 0;
     padding: 0;
@@ -7,9 +9,10 @@
 
 body{
     min-height: 100vh;
-    background: url('/assets/img/background.jpg') no-repeat;
+    min-width: 100vw;
+    background: url('/assets/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
+    padding-top: 8.7rem;
 }
 
 .header{
@@ -22,6 +25,13 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+}
+
+.header img{
+    display:flex;
+    justify-content: left;
+    width: 100px;
+    height: 100px;
 }
 
 .header::before{
@@ -37,10 +47,25 @@ body{
 }
 
 .logo{
+    display: flex;
+    text-align:left;
+    margin-left: 0;
     font-size: 2rem;
+    align-items: center;
     color: #fff;
     text-decoration: none;
     font-weight: 700;
+}
+
+.logo img{
+    width: 97px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span{
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .navbar a{
@@ -64,6 +89,82 @@ body{
     display: none;
 }
 
+#conteItemsCarrusel {
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.itemCarrusel {
+    height: 500px;
+    position: absolute;
+    width: 100%;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.itemCarrusel.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.tarjetaCarrusel {
+    height: 100%;
+}
+
+#tarjetaCarrusel-1 {
+    background-color: #df9f15;
+}
+
+#tarjetaCarrusel-2 {
+    background-color: aquamarine;
+}
+
+#tarjetaCarrusel-3 {
+    background-color: rgb(25, 240, 6);
+}
+
+.flechasCarrusel {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    pointer-events: none;
+}
+
+.flechasCarrusel i {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    pointer-events: all;
+}
+
+#contePuntos {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+#contePuntos > a {
+    font-size: 1.4em;
+    font-style: normal;
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
+}
+
+#contePuntos > a:before {
+    content: "●";
+}
+
+
 @media (max-width: 992px){
     .header{
         padding: 1.3rem 5%;
@@ -75,18 +176,33 @@ body{
         display: inline-flex;
     }
 
+    #check:checked~.icons #menu-icon {
+        display: none;
+
+    }
     .icons #close-icon{
         display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+        
     }
     .navbar{
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        height: 17.7rem;
+        height: 0;
         background: rgba(0, 0, 0, .1);
         backdrop-filter: blur(50px);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar{
+        height: 17.7rem;    
     }
 
     .navbar a{
@@ -94,6 +210,12 @@ body{
         font-size: 1.1rem;
         margin: 1.5rem 0;
         text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a{
+        transform: translateY(0);    
     }
 }
 

@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Navbar Responsive</title>
+    <title>CatWeb :3</title>
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="logo">Logo</a>
+        
+        <a href="#" class="logo">
+            <img src="/assets/img/icon.png" alt="CatWeb Logo">      
+            <span>CatWeb</span>
+        </a>
         <input type="checkbox" id="check">
         <label for="check" class="icons">
             <i class='bx bx-menu' id="menu-icon"></i>
@@ -19,14 +26,35 @@
         </label>
 
         <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Gallery</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#">Inicio</a>
+            <a href="#">Tipos de michis</a>
+            <a href="#">Cuidado del michi</a>
+            <a href="#">Curiosidades del michi</a>
+            <a href="#">Sobre nosotros</a>
         </nav>
-    </header>
-
-
+    </header> 
+    <div id="conteItemsCarrusel">
+        <div class="itemCarrusel active" id="tarjetaCarrusel-1">
+            <div class="tarjetaCarrusel"></div>
+        </div>
+        <div class="itemCarrusel" id="tarjetaCarrusel-2">
+            <div class="tarjetaCarrusel"></div>
+        </div>
+        <div class="itemCarrusel" id="tarjetaCarrusel-3">
+            <div class="tarjetaCarrusel"></div>
+        </div>
+    
+        <div class="flechasCarrusel">
+            <i class="prev">&#10094;</i>
+            <i class="next">&#10095;</i>
+        </div>
+    
+        <div id="contePuntos">
+            <a href="#carousel-1" data-index="0"></a>
+            <a href="#carousel-2" data-index="1"></a>
+            <a href="#carousel-3" data-index="2"></a>
+        </div>
+    </div>
+<script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>
